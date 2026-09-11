@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhinav SK — Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Abhinav SK, Full Stack Developer & Software Engineer based in India. Specializing in Next.js, React, TypeScript, Flutter, and scalable cloud architectures.">
+  <meta name="author" content="Abhinav SK">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/avatar.jpg">
+
+  <!-- Open Graph & Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abhinav SK — Full Stack Developer">
+  <meta property="og:description" content="Portfolio of Abhinav SK, Full Stack Developer & Software Engineer based in India. Specializing in Next.js, React, TypeScript, Flutter, and scalable cloud architectures.">
+  <meta property="og:image" content="assets/images/avatar.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Abhinav SK — Full Stack Developer">
+  <meta name="twitter:description" content="Portfolio of Abhinav SK, Full Stack Developer & Software Engineer based in India.">
+  <meta name="twitter:image" content="assets/images/avatar.jpg">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Minimalist Sticky Navigation -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <a href="#hero" class="nav-avatar-link" title="Abhinav SK — Back to Top">
+        <div class="nav-avatar-wrapper">
+          <img src="assets/images/avatar.jpg" alt="Abhinav SK" class="nav-avatar-img">
+        </div>
+      </a>
+      <nav class="nav-links" id="main-nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Work</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-right-actions">
+        <a href="mailto:abhinavkaippakil@gmail.com" class="nav-cta">Get in Touch</a>
+        <button class="nav-mobile-toggle" id="nav-mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+
+    <!-- ========================================================================
+         PAGE / SCREEN 1: HERO
+         ======================================================================== -->
+    <section class="screen-section hero-screen" id="hero">
+      <div class="screen-frame">
+        <h1 class="hero-main-title">
+          Full stack engineer<br>
+          crafting scalable<br>
+          web & mobile products.
+        </h1>
+
+        <p class="hero-bio-text">
+          Full Stack Developer with 1+ years of experience building and delivering web and mobile applications. Experienced in understanding client requirements, translating business needs into practical technical solutions, and contributing across the complete software development lifecycle. Skilled in frontend and backend development, API integration, authentication, database management, testing, deployment, and application optimization. Strong problem-solving mindset with the ability to choose the right technology and approach based on project requirements, while focusing on building reliable, scalable, and user-friendly solutions and delivering them effectively and on time.
+        </p>
+
+        <div class="hero-social-row">
+          <a href="https://github.com/abhiiiiiiiii" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/abhinav-sk" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76c.97 0 1.76.79 1.76 1.76s-.79 1.76-1.76 1.76m1.39 9.74v-8.37H5.07v8.37h2.78z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PAGE / SCREEN 2: ABOUT / BIO
+         ======================================================================== -->
+    <section class="screen-section about-screen" id="about">
+      <div class="screen-frame">
+        <div class="about-two-col">
+          <div class="about-text-col">
+            <p class="about-desc">
+              Full stack developer with 1+ years of experience, specializing in full stack and mobile development with React.js, Next.js, Node.js, TypeScript, and Flutter.
+            </p>
+
+            <p class="about-desc">
+              I have a bachelor's degree in Computer Science and Engineering from APJ Abdul Kalam Technological University. My main expertise is in building responsive web applications, cross-platform mobile apps with Flutter, and integrating cloud backends (Supabase, AWS DynamoDB, Firebase) with CI/CD and Docker workflows.
+            </p>
+          </div>
+
+          <div class="about-media-col">
+            <div class="about-name-wrapper">
+              <h2 class="about-name-title">ABHINAV SK</h2>
+              <p class="about-name-role">Full Stack Developer</p>
+            </div>
+
+            <div class="about-contact-links">
+              <a href="https://github.com/abhiiiiiiiii" target="_blank" rel="noopener noreferrer" class="contact-text-link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                <span>Follow on GitHub</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/abhinav-sk" target="_blank" rel="noopener noreferrer" class="contact-text-link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76c.97 0 1.76.79 1.76 1.76s-.79 1.76-1.76 1.76m1.39 9.74v-8.37H5.07v8.37h2.78z"/>
+                </svg>
+                <span>Follow on LinkedIn</span>
+              </a>
+
+              <a href="mailto:abhinavkaippakil@gmail.com" class="contact-text-link">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                <span>abhinavkaippakil@gmail.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PAGE / SCREEN 3: REAL-WORLD EXPERIENCE
+         ======================================================================== -->
+    <section class="screen-section experience-screen" id="experience">
+      <div class="screen-frame">
+        <h2 class="screen-title">
+          Real-World Experience,<br>
+          Real Results.
+        </h2>
+
+        <p class="screen-subtitle">
+          I've worked on a range of projects, primarily for innovative companies and platforms. These are the roles where I've delivered scalable impact.
+        </p>
+
+        <div class="exp-cards-grid">
+          <!-- Card 1: Corbit Technologies -->
+          <div class="exp-card exp-clickable" data-experience="corbit">
+            <div class="geom-icon-wrap geom-gold">
+              <div class="geom-shape shape-gold"></div>
+            </div>
+            <h3 class="exp-role">Full Stack Developer</h3>
+            <div class="exp-company">Corbit Technologies</div>
+            <div class="exp-date">May 2026 – Present</div>
+            <p class="exp-snippet">
+              Owned end-to-end web and mobile apps with Next.js, React, TypeScript, Flutter, and Supabase / DynamoDB backends.
+            </p>
+            <div class="exp-click-hint">
+              <span>View details</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+
+          <!-- Card 2: Codely.ai -->
+          <div class="exp-card exp-clickable" data-experience="codely">
+            <div class="geom-icon-wrap geom-cyan">
+              <div class="geom-shape shape-cyan"></div>
+            </div>
+            <h3 class="exp-role">Software Associate Engineer</h3>
+            <div class="exp-company">Codely.ai</div>
+            <div class="exp-date">Jul 2025 – Mar 2026</div>
+            <p class="exp-snippet">
+              Studied real airline APIs & schemas in Postman; integrated 4+ flight supplier APIs (Amadeus, Air Arabia, Flynas, Flyadeal) across 100K+ routes.
+            </p>
+            <div class="exp-click-hint">
+              <span>View details</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PAGE / SCREEN 4: FEATURED WORK
+         ======================================================================== -->
+    <section class="screen-section projects-screen" id="projects">
+      <div class="screen-frame">
+        <h2 class="screen-title">
+          Work I've done to make<br>
+          a meaningful impact.
+        </h2>
+
+        <p class="screen-subtitle">
+          I've worked on a range of projects, primarily for companies and real-world platforms. These are the ones I'm proudest to have developed.
+        </p>
+
+        <div class="work-cards-grid">
+          <!-- Work Card 1: Padikkam.com -->
+          <div class="work-card project-clickable" data-project="padikkam">
+            <div class="work-card-top">
+              <div class="work-logo-badge">
+                <img src="assets/images/padikkam-logo.png" alt="Padikkam.com Logo" class="work-card-logo-img">
+              </div>
+              <a href="https://padikkam.com/" target="_blank" rel="noopener noreferrer" class="work-ext-link" onclick="event.stopPropagation();" title="Visit padikkam.com">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+            <h3 class="work-title">Padikkam.com</h3>
+            <p class="work-desc">
+              Multi-tenant educational discovery platform connecting students with academic institutions. Features a serverless AWS backend, real-time discovery feeds for admissions and scholarships, automated monetization quota engine, and Amazon Cognito RBAC authentication.
+            </p>
+            <div class="work-footer-link">
+              <span>View</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+
+          <!-- Work Card 2: Onroad Breakdown & EV -->
+          <div class="work-card project-clickable" data-project="onroad">
+            <div class="work-icon-wrap">
+              <div class="geom-diamond diamond-peach"></div>
+            </div>
+            <h3 class="work-title">Onroad Breakdown Assistance & EV Platform</h3>
+            <p class="work-desc">
+              Full-stack web application enabling stranded motorists to locate nearby verified mechanics and find EV charging stations in real-time. Built with Python, Flask, and MySQL with responsive UI and query-optimized geospatial performance.
+            </p>
+            <div class="work-footer-link">
+              <span>View</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+
+          <!-- Work Card 3: B2B Travel SaaS -->
+          <div class="work-card project-clickable" data-project="travel-saas">
+            <div class="work-icon-wrap">
+              <div class="geom-diamond diamond-cyan"></div>
+            </div>
+            <h3 class="work-title">B2B Flight Search & Booking Platform</h3>
+            <p class="work-desc">
+              High-throughput B2B travel SaaS engine developed at Codely.ai integrating Amadeus, Air Arabia, Flynas, and Flyadeal APIs. Built with React.js, TypeScript, and Docker, serving over 100,000 global routes with 99%+ accuracy.
+            </p>
+            <div class="work-footer-link">
+              <span>View</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+
+          <!-- Work Card 4: Dinato -->
+          <div class="work-card project-clickable" data-project="dinato">
+            <div class="work-card-top">
+              <div class="work-logo-badge">
+                <img src="assets/images/dinato-logo.png" alt="Dinato Logo" class="work-card-logo-img">
+              </div>
+              <a href="https://play.google.com/store/apps/details?id=com.corbittech.dinato&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="work-ext-link" onclick="event.stopPropagation();" title="View on Google Play Store">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+            <h3 class="work-title">Dinato</h3>
+            <p class="work-desc">
+              Dual-sided hyperlocal home-cooked food marketplace connecting local home chefs with customers across iOS and Android. Built with Flutter, Firebase, live audio-alert order dispatch, mid-order add-on engine, and multi-tier subscriptions.
+            </p>
+            <div class="work-footer-link">
+              <span>View</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+
+          <!-- Work Card 5: Bharat Haat -->
+          <div class="work-card project-clickable" data-project="bharathaat">
+            <div class="work-card-top">
+              <div class="work-logo-badge">
+                <img src="assets/images/bharathaat-logo.png" alt="Bharat Haat Logo" class="work-card-logo-img">
+              </div>
+              <a href="https://play.google.com/store/apps/details?id=com.optimabiz.bharathaat&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="work-ext-link" onclick="event.stopPropagation();" title="View on Google Play Store">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+            <h3 class="work-title">Bharat Haat</h3>
+            <p class="work-desc">
+              Hyperlocal marketplace and classifieds platform on iOS and Android. Built with Flutter, Supabase, and PostGIS geospatial queries for sub-50ms radius discovery, direct WhatsApp checkout, and vendor CRM pipelines.
+            </p>
+            <div class="work-footer-link">
+              <span>View</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+
+          <!-- Work Card 6: Quick Search -->
+          <div class="work-card project-clickable" data-project="quicksearch">
+            <div class="work-card-top">
+              <div class="work-logo-badge">
+                <img src="assets/images/quicksearch-logo.png" alt="Quick Search Logo" class="work-card-logo-img">
+              </div>
+              <a href="https://play.google.com/store/apps/details?id=com.quqsearch.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="work-ext-link" onclick="event.stopPropagation();" title="View on Google Play Store">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+            <h3 class="work-title">Quick Search</h3>
+            <p class="work-desc">
+              Hyperlocal marketplace and job portal on Android, iOS, and Web. Features official DigiLocker OAuth2 e-KYC verification, Supabase Realtime WebSocket chat, and client-side media compression pipelines.
+            </p>
+            <div class="work-footer-link">
+              <span>View</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PAGE / SCREEN 5: KNOWLEDGE & GROWTH
+         ======================================================================== -->
+    <section class="screen-section education-screen" id="education">
+      <div class="screen-frame">
+        <h2 class="screen-title">
+          Education & Learning
+        </h2>
+
+        <p class="screen-subtitle">
+          Continuous learning, academic credentials, and software engineering milestones that shaped my technical foundation.
+        </p>
+
+        <div class="knowledge-list">
+          <!-- Item 1: B.Tech -->
+          <div class="knowledge-item">
+            <div class="item-icon-box">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#d8a47f" stroke-width="1.8">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <div class="item-details">
+              <div class="item-primary-title">Bachelor of Technology (B.Tech)</div>
+              <div class="item-subtitle">Computer Science and Engineering • APJ Abdul Kalam Technological University (CGPA: 7.04)</div>
+            </div>
+            <div class="item-date">2021 – 2025</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         PAGE / SCREEN 6: CONTACT & FOOTER
+         ======================================================================== -->
+    <section class="screen-section contact-screen" id="contact">
+      <div class="screen-frame">
+        <h2 class="screen-title">
+          Let's connect and build<br>
+          something impactful.
+        </h2>
+
+        <p class="screen-subtitle">
+          I'm always open to discussing engineering roles, collaborative ventures, or technical challenges.
+        </p>
+
+        <div class="contact-methods-box">
+          <div class="contact-link-row">
+            <span class="contact-type">Email:</span>
+            <a href="mailto:abhinavkaippakil@gmail.com" class="contact-value" title="Click to send email to abhinavkaippakil@gmail.com">
+              <span>abhinavkaippakil@gmail.com</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" class="contact-ext-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+
+          <div class="contact-link-row">
+            <span class="contact-type">Phone:</span>
+            <a href="tel:+917034749885" class="contact-value" title="Click to call +91 7034749885">
+              <span>+91 7034749885</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" class="contact-ext-icon"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+            </a>
+          </div>
+
+          <div class="contact-link-row">
+            <span class="contact-type">Location:</span>
+            <span class="contact-value-plain">Kozhikode, Kerala, India</span>
+          </div>
+
+          <div class="contact-link-row">
+            <span class="contact-type">Profiles:</span>
+            <div class="contact-profiles-group">
+              <a href="https://github.com/abhiiiiiiiii" target="_blank" rel="noopener noreferrer" class="gold-link">GitHub ↗</a>
+              <span class="sep">•</span>
+              <a href="https://www.linkedin.com/in/abhinav-sk" target="_blank" rel="noopener noreferrer" class="gold-link">LinkedIn ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <footer class="minimal-footer">
+          <p>© 2026 Abhinav SK</p>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Project Detail Modal Popup -->
+  <div class="modal-backdrop" id="project-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close dialog">&times;</button>
+      <div class="modal-body" id="modal-content-area"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast-message">
+    <span class="toast-text" id="toast-text">Copied to clipboard!</span>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

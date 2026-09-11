@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-abhinav-sk",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal developer portfolio website for Abhinav SK",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.2"
+  }
+}
