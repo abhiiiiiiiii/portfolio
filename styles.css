@@ -968,6 +968,7 @@ a {
 .ring-carousel .work-card {
   position: absolute;
   width: 340px;
+  height: 450px; /* Fixed height for consistent ratio */
   padding: 1.5rem 1.5rem 1.25rem;
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   opacity: 0;
@@ -975,6 +976,14 @@ a {
   pointer-events: none;
   transform: translateX(0) scale(0.7);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.ring-carousel .work-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
 }
 
 .ring-carousel .work-card.active-slide {
@@ -1027,7 +1036,11 @@ a {
   }
   .ring-carousel .work-card {
     width: 270px;
+    height: 420px; /* Adjust fixed height for mobile */
     padding: 1.25rem 1.25rem 1rem;
+  }
+  .ring-carousel .work-desc {
+    -webkit-line-clamp: 5; /* Allow 5 lines on mobile if needed */
   }
   /* Keep side cards peeking out, scaled down so they fit visually */
   .ring-carousel .work-card.prev-slide { transform: translateX(-60%) scale(0.85); opacity: 0.5; }
