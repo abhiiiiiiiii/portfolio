@@ -931,6 +931,108 @@ a {
 }
 
 /* --------------------------------------------------------------------------
+   WEBSITE CARD IMAGES
+   -------------------------------------------------------------------------- */
+.work-card-image-wrap {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.work-card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform var(--trans-slow);
+}
+
+.work-card:hover .work-card-image {
+  transform: scale(1.03);
+}
+
+/* 3D Ring Carousel (Used for Projects and Websites) */
+.ring-carousel {
+  position: relative;
+  width: 100%;
+  height: 540px; /* Slightly taller for projects */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.ring-carousel .work-card {
+  position: absolute;
+  width: 340px;
+  padding: 1.5rem 1.5rem 1.25rem;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateX(0) scale(0.7);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.ring-carousel .work-card.active-slide {
+  opacity: 1;
+  z-index: 10;
+  transform: translateX(0) scale(1);
+  pointer-events: auto;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
+.ring-carousel .work-card.prev-slide {
+  opacity: 0.5;
+  z-index: 5;
+  transform: translateX(-110%) scale(0.85);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.ring-carousel .work-card.next-slide {
+  opacity: 0.5;
+  z-index: 5;
+  transform: translateX(110%) scale(0.85);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.ring-carousel .work-card.hidden-slide {
+  opacity: 0;
+  z-index: 1;
+  transform: translateX(0) scale(0.5);
+  pointer-events: none;
+}
+
+@media (max-width: 960px) {
+  .ring-carousel {
+    height: 480px;
+  }
+  .ring-carousel .work-card {
+    width: 280px;
+    padding: 1.25rem 1.25rem 1rem;
+  }
+  .ring-carousel .work-card.prev-slide { transform: translateX(-90%) scale(0.85); }
+  .ring-carousel .work-card.next-slide { transform: translateX(90%) scale(0.85); }
+}
+
+@media (max-width: 540px) {
+  .ring-carousel {
+    height: 440px;
+  }
+  .ring-carousel .work-card {
+    width: 240px;
+  }
+  /* Adjusted from 70% to 55% so they peek out more on small screens */
+  .ring-carousel .work-card.prev-slide { transform: translateX(-55%) scale(0.85); opacity: 0.6; }
+  .ring-carousel .work-card.next-slide { transform: translateX(55%) scale(0.85); opacity: 0.6; }
+}
+/* --------------------------------------------------------------------------
    Responsive Breakpoints Across All Devices
    -------------------------------------------------------------------------- */
 

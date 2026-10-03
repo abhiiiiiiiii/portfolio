@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNavigation();
   initContactLinks();
   initNavigationAndUrlHandling();
+  initRingCarousels();
 });
 
 /* --------------------------------------------------------------------------
@@ -469,4 +470,163 @@ function initNavigationAndUrlHandling() {
 
   window.addEventListener('scroll', updateActiveNavLink, { passive: true });
   updateActiveNavLink();
+}
+
+function initRingCarousels() {
+  const carousels = document.querySelectorAll('.ring-carousel');
+  
+  carousels.forEach(carousel => {
+    const slides = Array.from(carousel.querySelectorAll('.work-card'));
+    if (slides.length === 0) return;
+
+    let currentIndex = 0;
+    let autoScrollInterval;
+    let isAnimating = false;
+
+    // Is this a website carousel (where cards have data-url)?
+    const isWebsites = carousel.id === 'websites-ring';
+
+    function updateCarousel(direction = 'next') {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+      const nextIndex = (currentIndex + 1) % slides.length;
+      const hiddenIndex = (currentIndex + 2) % slides.length;
+
+      slides.forEach((slide, i) => {
+        slide.style.transition = 'all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)';
+        slide.style.pointerEvents = 'none';
+
+        // ONLY clear onclick if this is a website card. 
+        // For project cards, we don't touch their click handler so the modals still work!
+        if (isWebsites) {
+          slide.onclick = null;
+        } else {
+          // If it's a project card, we still want to block the modal from opening if you click a SIDE card,
+          // but we can't easily remove EventListener. However, `pointer-events: none` handles this nicely!
+          // We will dynamically add/remove an overlay or just let `pointer-events` block it.
+        }
+
+        if (i === currentIndex) {
+          slide.style.opacity = '1';
+          slide.style.transform = 'translateX(0) scale(1)';
+          slide.style.zIndex = '10';
+          slide.style.pointerEvents = 'auto'; // allow clicking the modal/url!
+          
+          if (isWebsites) {
+            slide.onclick = () => window.open(slide.dataset.url, '_blank');
+          }
+        } else if (i === prevIndex) {
+          slide.style.opacity = '0.5';
+          slide.style.transform = 'translateX(-110%) scale(0.85)';
+          slide.style.zIndex = '5';
+          slide.style.pointerEvents = 'auto';
+          // When clicking side card, we want to slide, not open modal/url.
+          slide.onclick = (e) => { 
+            e.preventDefault(); 
+            e.stopImmediatePropagation(); 
+            currentIndex = prevIndex; 
+            updateCarousel('prev'); 
+          };
+        } else if (i === nextIndex) {
+          slide.style.opacity = '0.5';
+          slide.style.transform = 'translateX(110%) scale(0.85)';
+          slide.style.zIndex = '5';
+          slide.style.pointerEvents = 'auto';
+          slide.onclick = (e) => { 
+            e.preventDefault(); 
+            e.stopImmediatePropagation(); 
+            currentIndex = nextIndex; 
+            updateCarousel('next'); 
+          };
+        } else {
+          slide.style.opacity = '0';
+          slide.style.zIndex = '1';
+          
+          if (direction === 'next') {
+            slide.style.transform = 'translateX(-200%) scale(0.5)';
+          } else if (direction === 'prev') {
+            slide.style.transform = 'translateX(200%) scale(0.5)';
+          } else {
+            slide.style.transform = 'translateX(0) scale(0.5)';
+          }
+        }
+      });
+
+      setTimeout(() => {
+        const hiddenSlide = slides[hiddenIndex];
+        if (hiddenSlide) {
+          hiddenSlide.style.transition = 'none';
+          if (direction === 'next') hiddenSlide.style.transform = 'translateX(200%) scale(0.5)';
+          else if (direction === 'prev') hiddenSlide.style.transform = 'translateX(-200%) scale(0.5)';
+        }
+        isAnimating = false;
+      }, 500);
+    }
+
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel('next');
+      }, 1000); 
+    }
+
+    updateCarousel('none');
+    startAutoScroll();
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isDragging = false;
+
+    function handleSwipe() {
+      const swipeThreshold = 40;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel('next');
+      }
+      if (touchEndX > touchStartX + swipeThreshold) {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel('prev');
+      }
+    }
+
+    carousel.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+      clearInterval(autoScrollInterval);
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      startAutoScroll();
+    }, { passive: true });
+
+    carousel.addEventListener('mousedown', e => {
+      isDragging = true;
+      touchStartX = e.screenX;
+      clearInterval(autoScrollInterval);
+      carousel.style.cursor = 'grabbing';
+    });
+
+    carousel.addEventListener('mouseup', e => {
+      if (!isDragging) return;
+      isDragging = false;
+      touchEndX = e.screenX;
+      handleSwipe();
+      carousel.style.cursor = 'default';
+    });
+
+    carousel.addEventListener('mouseleave', () => {
+      if (isDragging) {
+        isDragging = false;
+        carousel.style.cursor = 'default';
+      }
+      startAutoScroll();
+    });
+
+    carousel.addEventListener('mouseenter', () => {
+      clearInterval(autoScrollInterval);
+    });
+  });
 }
