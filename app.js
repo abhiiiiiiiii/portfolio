@@ -570,7 +570,7 @@ function initRingCarousels() {
       autoScrollInterval = setInterval(() => {
         currentIndex = (currentIndex + 1) % slides.length;
         updateCarousel('next');
-      }, 1000); 
+      }, 2000); 
     }
 
     updateCarousel('none');
