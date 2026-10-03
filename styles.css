@@ -955,6 +955,59 @@ a {
   transform: scale(1.03);
 }
 
+/* Web Card — image-dominant layout for Creative Web Design section */
+.web-card {
+  padding: 0 !important;
+  overflow: hidden;
+  border-radius: 14px;
+  cursor: pointer;
+  width: 320px;
+}
+
+.web-card-image-wrap {
+  width: 100%;
+  overflow: hidden;
+  flex: 1;
+}
+
+.web-card-image {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.web-card:hover .web-card-image {
+  transform: scale(1.04);
+}
+
+.web-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+}
+
+.web-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-bold);
+  line-height: 1.3;
+}
+
+.web-card-footer svg {
+  color: var(--text-body);
+  flex-shrink: 0;
+  transition: color var(--trans-fast), transform var(--trans-fast);
+}
+
+.web-card:hover .web-card-footer svg {
+  color: var(--accent-gold);
+  transform: translate(2px, -2px);
+}
+
 /* 3D Ring Carousel (Used for Projects and Websites) */
 .ring-carousel {
   position: relative;
