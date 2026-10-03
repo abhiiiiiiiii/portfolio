@@ -968,6 +968,7 @@ a {
   width: 100%;
   overflow: hidden;
   flex: 1;
+  position: relative;
 }
 
 .web-card-image {
@@ -975,37 +976,34 @@ a {
   height: 280px;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: brightness(0.8);
 }
 
 .web-card:hover .web-card-image {
   transform: scale(1.04);
+  filter: brightness(0.6);
 }
 
-.web-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.25rem;
-  background: var(--bg-card);
+.web-card-name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  z-index: 2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
 }
 
-.web-card-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-bold);
-  line-height: 1.3;
-}
-
-.web-card-footer svg {
-  color: var(--text-body);
-  flex-shrink: 0;
-  transition: color var(--trans-fast), transform var(--trans-fast);
-}
-
-.web-card:hover .web-card-footer svg {
-  color: var(--accent-gold);
-  transform: translate(2px, -2px);
+.web-card:hover .web-card-name {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 /* 3D Ring Carousel (Used for Projects and Websites) */
