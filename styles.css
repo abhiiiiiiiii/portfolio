@@ -1023,14 +1023,15 @@ a {
 
 @media (max-width: 540px) {
   .ring-carousel {
-    height: 440px;
+    height: 500px;
   }
   .ring-carousel .work-card {
-    width: 240px;
+    width: 270px;
+    padding: 1.25rem 1.25rem 1rem;
   }
-  /* Adjusted from 70% to 55% so they peek out more on small screens */
-  .ring-carousel .work-card.prev-slide { transform: translateX(-55%) scale(0.85); opacity: 0.6; }
-  .ring-carousel .work-card.next-slide { transform: translateX(55%) scale(0.85); opacity: 0.6; }
+  /* Keep side cards peeking out, scaled down so they fit visually */
+  .ring-carousel .work-card.prev-slide { transform: translateX(-60%) scale(0.85); opacity: 0.5; }
+  .ring-carousel .work-card.next-slide { transform: translateX(60%) scale(0.85); opacity: 0.5; }
 }
 /* --------------------------------------------------------------------------
    Responsive Breakpoints Across All Devices
