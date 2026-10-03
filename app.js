@@ -615,15 +615,24 @@ function initRingCarousels() {
       touchEndX = e.screenX;
       handleSwipe();
       carousel.style.cursor = 'default';
+      startAutoScroll();
     });
 
     carousel.addEventListener('mouseleave', () => {
       if (isDragging) {
         isDragging = false;
         carousel.style.cursor = 'default';
+        startAutoScroll();
       }
-      startAutoScroll();
     });
+
+    // Capture click phase to prevent link opening when we are just swiping
+    carousel.addEventListener('click', e => {
+      if (Math.abs(touchEndX - touchStartX) > 15) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+      }
+    }, true);
 
     carousel.addEventListener('mouseenter', () => {
       clearInterval(autoScrollInterval);
