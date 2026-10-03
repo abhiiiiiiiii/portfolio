@@ -987,23 +987,24 @@ a {
 
 .web-card-name {
   position: absolute;
-  top: 50%;
+  bottom: 1.5rem;
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.5rem;
+  transform: translateX(-50%);
+  font-size: 1.25rem;
   font-weight: 700;
   color: #ffffff;
   text-align: center;
   z-index: 2;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
   pointer-events: none;
+  white-space: nowrap;
 }
 
 .web-card:hover .web-card-name {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1.05);
+  transform: translateX(-50%) translateY(-5px);
 }
 
 /* 3D Ring Carousel (Used for Projects and Websites) */
