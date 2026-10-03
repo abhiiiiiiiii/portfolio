@@ -1017,6 +1017,8 @@ a {
   align-items: center;
   overflow: hidden;
   margin: 1rem 0;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 .ring-carousel .work-card {

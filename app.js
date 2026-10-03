@@ -609,6 +609,12 @@ function initRingCarousels() {
       carousel.style.cursor = 'grabbing';
     });
 
+    carousel.addEventListener('mousemove', e => {
+      if (!isDragging) return;
+      // Optional: Could add real-time transform dragging here, 
+      // but for now we just want to ensure it feels smooth on release.
+    });
+
     carousel.addEventListener('mouseup', e => {
       if (!isDragging) return;
       isDragging = false;
@@ -624,6 +630,11 @@ function initRingCarousels() {
         carousel.style.cursor = 'default';
         startAutoScroll();
       }
+    });
+
+    // Prevent default browser dragging of images which breaks our manual swipe
+    carousel.addEventListener('dragstart', e => {
+      e.preventDefault();
     });
 
     // Capture click phase to prevent link opening when we are just swiping
