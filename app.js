@@ -566,6 +566,7 @@ function initRingCarousels() {
     }
 
     function startAutoScroll() {
+      clearInterval(autoScrollInterval); // Prevent multiple intervals
       autoScrollInterval = setInterval(() => {
         currentIndex = (currentIndex + 1) % slides.length;
         updateCarousel('next');
@@ -611,8 +612,6 @@ function initRingCarousels() {
 
     carousel.addEventListener('mousemove', e => {
       if (!isDragging) return;
-      // Optional: Could add real-time transform dragging here, 
-      // but for now we just want to ensure it feels smooth on release.
     });
 
     carousel.addEventListener('mouseup', e => {
@@ -628,8 +627,8 @@ function initRingCarousels() {
       if (isDragging) {
         isDragging = false;
         carousel.style.cursor = 'default';
-        startAutoScroll();
       }
+      startAutoScroll(); // Always restart auto-scroll when mouse leaves, even if just hovering
     });
 
     // Prevent default browser dragging of images which breaks our manual swipe
